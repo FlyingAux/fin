@@ -12,6 +12,8 @@ const db =require('./config/mongoDb-connection');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var assetsRouter = require('./routes/assetsRoutes');
+var transactionRouter = require('./routes/transactionRoutes');
 
 var app = express();
 
@@ -28,6 +30,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/assetsRoutes', assetsRouter);
+app.use('/transactionRoutes', transactionRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
